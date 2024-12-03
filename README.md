@@ -1,66 +1,86 @@
-PasswordManager
-Опис
-PasswordManager — це інструмент для безпечного управління паролями. Цей проєкт написаний на C++ і забезпечує надійне збереження даних користувача завдяки вбудованим механізмам шифрування.
+#include <fstream>
+#include <string>
 
-Цей менеджер паролів дозволяє:
+int main() {
+    std::ofstream readme("README.md");
 
-Додавати, редагувати та видаляти збережені паролі.
-Зберігати паролі у зашифрованому форматі.
-Забезпечувати безпечний доступ до паролів через інтуїтивно зрозумілий інтерфейс.
-Функціональність
-Модуль	Файл	Опис
-Шифрування	encryption.h	Реалізація шифрування паролів.
-Інтерфейс користувача	ui.h	Логіка взаємодії користувача із системою.
-Логіка паролів	password_manager.h	Збереження та управління паролями.
-Дані користувача	user.h, user.cpp	Структури для управління даними користувача (логін, доступ тощо).
-Основна програма	main.cpp	Головний файл, що запускає додаток.
-Вимоги
-Мова програмування: C++
-Інструменти для компіляції:
-CMake
-Makefile (опціонально)
-Бібліотеки:
-OpenSSL (для роботи з шифруванням)
-Як запустити
-Склонуйте репозиторій:
-bash
-Копіювати код
-git clone https://github.com/nikilodiym/PasswordManager.git
-cd PasswordManager
-Зберіть проєкт за допомогою CMake:
-bash
-Копіювати код
-mkdir build
-cd build
-cmake ..
-make
-Запустіть виконуваний файл:
-bash
-Копіювати код
-./PasswordManager
-Архітектура проєкту
-mermaid
-Копіювати код
-graph TD
-    A[Main Program] --> B[UI Module]
-    B --> C[User Management]
-    B --> D[Password Management]
-    C --> E[Data Encryption]
-    D --> E
-Приклад використання
-Після запуску програми можна:
+    if (readme.is_open()) {
+        // Заголовок
+        readme << "# PasswordManager\n\n";
+        readme << "![PasswordManager](https://img.shields.io/badge/C++-Project-blue?style=for-the-badge&logo=c%2B%2B)\n\n";
 
-Додати новий пароль:
-Введіть назву сервісу, логін та пароль.
-Програма зашифрує дані та збереже їх.
-Відобразити збережені паролі:
-Увійдіть у ваш акаунт.
-Програма розшифрує паролі для перегляду.
-Видалити застарілі записи:
-Просто оберіть запис для видалення.
-Внесок у проєкт
-Ми завжди раді новим учасникам! Щоб долучитися:
+        // Опис
+        readme << "## Опис\n";
+        readme << "**PasswordManager** — це інструмент для безпечного управління паролями. Проєкт написаний на C++ із використанням сучасних принципів програмування.\n\n";
 
-Форкніть репозиторій.
-Внесіть зміни у вашій гілці.
-Відправте Pull Request.
+        readme << "### Можливості:\n";
+        readme << "- Додавання, редагування та видалення паролів.\n";
+        readme << "- Шифрування паролів для безпечного збереження.\n";
+        readme << "- Зручний інтерфейс для взаємодії з користувачем.\n\n";
+
+        // Скриншоти
+        readme << "## Скриншоти\n";
+        readme << "![Скриншот1](https://via.placeholder.com/800x400?text=Screenshot+1)\n";
+        readme << "![Скриншот2](https://via.placeholder.com/800x400?text=Screenshot+2)\n\n";
+
+        // Таблиця функціональності
+        readme << "## Функціональність\n";
+        readme << "| **Компонент**        | **Опис**                                              |\n";
+        readme << "|----------------------|------------------------------------------------------|\n";
+        readme << "| `encryption.h`       | Реалізація шифрування паролів.                       |\n";
+        readme << "| `password_manager.h` | Логіка збереження і управління паролями.             |\n";
+        readme << "| `ui.h`               | Інтерфейс користувача.                               |\n";
+        readme << "| `user.h`, `user.cpp` | Логіка роботи з даними користувачів.                 |\n";
+        readme << "| `main.cpp`           | Основна програма, яка запускає весь проєкт.          |\n\n";
+
+        // Архітектура проєкту
+        readme << "## Архітектура\n";
+        readme << "```mermaid\n";
+        readme << "graph TD\n";
+        readme << "    A[Main Program] --> B[UI Module]\n";
+        readme << "    B --> C[User Management]\n";
+        readme << "    B --> D[Password Management]\n";
+        readme << "    C --> E[Encryption Module]\n";
+        readme << "```\n\n";
+
+        // Як запустити
+        readme << "## Як запустити\n";
+        readme << "1. Склонуйте репозиторій:\n";
+        readme << "   ```bash\n";
+        readme << "   git clone https://github.com/nikilodiym/PasswordManager.git\n";
+        readme << "   cd PasswordManager\n";
+        readme << "   ```\n";
+        readme << "2. Зберіть проєкт за допомогою CMake:\n";
+        readme << "   ```bash\n";
+        readme << "   mkdir build\n";
+        readme << "   cd build\n";
+        readme << "   cmake ..\n";
+        readme << "   make\n";
+        readme << "   ```\n";
+        readme << "3. Запустіть програму:\n";
+        readme << "   ```bash\n";
+        readme << "   ./PasswordManager\n";
+        readme << "   ```\n\n";
+
+        // Приклад використання
+        readme << "## Приклад використання\n";
+        readme << "### Додавання паролю\n";
+        readme << "1. Введіть назву сервісу.\n";
+        readme << "2. Введіть логін і пароль.\n";
+        readme << "3. Дані збережуться у зашифрованому форматі.\n\n";
+
+        // Ліцензія
+        readme << "## Ліцензія\n";
+        readme << "Цей проєкт ліцензований під **MIT License**. Детальніше дивіться у файлі `LICENSE`.\n\n";
+
+        // Контакти
+        readme << "## Контакти\n";
+        readme << "- Автор: [nikilodiym](https://github.com/nikilodiym)\n";
+        readme << "- Email: example@example.com\n";
+
+        readme.close();
+        return 0;
+    }
+
+    return 1;
+}
