@@ -34,34 +34,4 @@
 | main.cpp             | Основна програма, яка запускає весь проєкт.          |
 
 
-## Архітектура
 
-mermaid
-graph TD
-    A[Main Program] --> B[UI Module]
-    B --> C[User Management]
-    B --> D[Password Management]
-    C --> E[Encryption Module]
-
-Як запустити
-Склонуйте репозиторій:
-bash
-Копіювати код
-git clone https://github.com/nikilodiym/PasswordManager.git
-cd PasswordManager
-Зберіть проєкт за допомогою CMake:
-bash
-Копіювати код
-mkdir build
-cd build
-cmake ..
-make
-Запустіть програму:
-bash
-Копіювати код
-./PasswordManager
-Приклад використання
-Додавання паролю
-Введіть назву сервісу.
-Введіть логін і пароль.
-Дані збережуться у зашифрованому форматі.
