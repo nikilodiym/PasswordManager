@@ -35,3 +35,11 @@
 
 
 
+## Архітектура
+
+```mermaid
+graph TD
+    A[Main Program] --> B[UI Module]
+    B --> C[User Management]
+    B --> D[Password Management]
+    C --> E[Encryption Module]
