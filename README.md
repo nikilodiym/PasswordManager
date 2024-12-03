@@ -15,8 +15,9 @@
 
 ## Скриншоти
 
-![Скриншот1](![image](https://github.com/user-attachments/assets/f08f4094-84aa-426e-bd8f-2b97c37fc874)
-![Скриншот2](https://via.placeholder.com/800x400?text=Screenshot+2)
+(![image](https://github.com/user-attachments/assets/f08f4094-84aa-426e-bd8f-2b97c37fc874)
+![image](https://github.com/user-attachments/assets/06150a2c-454c-43ca-a5b1-3f640a96a2fb)
+
 
 ---
 
