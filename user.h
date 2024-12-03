@@ -9,7 +9,7 @@ namespace password_manager_ns {
 
     class user {
     public:
-        user(const string& username, user_role role);
+        user(const string& username, user_role role, const string& password);
 
         string get_username() const;
         user_role get_role() const;
@@ -19,6 +19,8 @@ namespace password_manager_ns {
         string username;
         user_role role;
         string encrypted_password;
+
+        string encrypt_password(const string& password) const;
     };
 
 }
