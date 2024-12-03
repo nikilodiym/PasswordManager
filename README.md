@@ -17,7 +17,7 @@
 
 <div style="display: flex; justify-content: space-around;">
     <img src="https://github.com/user-attachments/assets/f08f4094-84aa-426e-bd8f-2b97c37fc874" alt="Screenshot 1" style="width: 45%;">
-    <img src="https://github.com/user-attachments/assets/06150a2c-454c-43ca-a5b1-3f640a96a2fb" alt="Screenshot 2" style="width: 45%; margin-left=20px">
+    <img src="https://github.com/user-attachments/assets/06150a2c-454c-43ca-a5b1-3f640a96a2fb" alt="Screenshot 2" style="width: 45%; margin-right=20px">
 </div>
 
 
