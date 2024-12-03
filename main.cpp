@@ -20,87 +20,87 @@ int main() {
         cin >> choice;
 
         switch (choice) {
-        case 1: {
-            string username, password, role_input;
-            cout << "Enter username: ";
-            cin >> username;
-            cout << "Enter password: ";
-            cin >> password;
-            cout << "Enter role (guest, regular_user, admin): ";
-            cin >> role_input;
-
-            user_role role = user_role::guest;
-            if (role_input == "regular_user") role = user_role::regular_user;
-            else if (role_input == "admin") role = user_role::admin;
-
-            current_user = new user(username, role, password);
-            cout << "User added successfully.\n";
-            break;
-        }
-        case 2: {
-            string username, password;
-            cout << "Enter username: ";
-            cin >> username;
-            cout << "Enter password: ";
-            cin >> password;
-
-            if (current_user && current_user->get_username() == username &&
-                current_user->authenticate(password)) {
-                cout << "Login successful.\n";
-            }
-            else {
-                cout << "Login failed. Try again.\n";
-            }
-            break;
-        }
-        case 3: {
-            if (current_user) {
-                string category, service, service_username, service_password;
-                cout << "Enter category: ";
-                cin >> category;
-                cout << "Enter service: ";
-                cin >> service;
+            case 1: {
+                string username, password, role_input;
                 cout << "Enter username: ";
-                cin >> service_username;
+                cin >> username;
                 cout << "Enter password: ";
-                cin >> service_password;
+                cin >> password;
+                cout << "Enter role (guest, regular_user, admin): ";
+                cin >> role_input;
 
-                if (manager.add_password(category, service, service_username, service_password)) {
-                    cout << "Password added successfully.\n";
+                user_role role = user_role::guest;
+                if (role_input == "regular_user") role = user_role::regular_user;
+                else if (role_input == "admin") role = user_role::admin;
+
+                current_user = new user(username, role, password);
+                cout << "User added successfully.\n";
+                break;
+            }
+            case 2: {
+                string username, password;
+                cout << "Enter username: ";
+                cin >> username;
+                cout << "Enter password: ";
+                cin >> password;
+
+                if (current_user && current_user->get_username() == username &&
+                    current_user->authenticate(password)) {
+                    cout << "Login successful.\n";
                 }
                 else {
-                    cout << "Failed to add password.\n";
+                    cout << "Login failed. Try again.\n";
                 }
+                break;
             }
-            else {
-                cout << "Please log in first.\n";
-            }
-            break;
-        }
-        case 4: {
-            if (current_user) {
-                string service;
-                cout << "Enter service name: ";
-                cin >> service;
+            case 3: {
+                if (current_user) {
+                    string category, service, service_username, service_password;
+                    cout << "Enter category: ";
+                    cin >> category;
+                    cout << "Enter service: ";
+                    cin >> service;
+                    cout << "Enter username: ";
+                    cin >> service_username;
+                    cout << "Enter password: ";
+                    cin >> service_password;
 
-                string retrieved_password = manager.get_password(service, *current_user);
-                if (!retrieved_password.empty()) {
-                    cout << "Password for " << service << ": " << retrieved_password << "\n";
+                    if (manager.add_password(category, service, service_username, service_password)) {
+                        cout << "Password added successfully.\n";
+                    }
+                    else {
+                        cout << "Failed to add password.\n";
+                    }
                 }
                 else {
-                    cout << "Service not found.\n";
+                    cout << "Please log in first.\n";
                 }
+                break;
             }
-            else {
-                cout << "Please log in first.\n";
+            case 4: {
+                if (current_user) {
+                    string service;
+                    cout << "Enter service name: ";
+                    cin >> service;
+
+                    string retrieved_password = manager.get_password(service, *current_user);
+                    if (!retrieved_password.empty()) {
+                        cout << "Password for " << service << ": " << retrieved_password << "\n";
+                    }
+                    else {
+                        cout << "Service not found.\n";
+                    }
+                }
+                else {
+                    cout << "Please log in first.\n";
+                }
+                break;
             }
-            break;
-        }
-        case 5:
-            cout << "Exiting program...\n";
-            break;
-        default:
-            cout << "Invalid choice. Please try again.\n";
+            case 5:
+                cout << "Exiting program...\n";
+                break;
+            default:
+                cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 5);
 
